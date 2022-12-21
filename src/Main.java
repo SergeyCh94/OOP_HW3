@@ -19,7 +19,6 @@ public class Main {
         System.out.println(bmwCar);
         System.out.println(kiaCar);
         System.out.println(hyundaiCar);
-        ladaCar.changeTiers(9);
         System.out.println(ladaCar);
 
     }
