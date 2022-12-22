@@ -1,3 +1,4 @@
+import transport.Bus;
 import transport.Car;
 
 
@@ -14,12 +15,12 @@ public class Main {
         Car hyundaiCar = new Car("Hyundai", "Avante", 1.6, "Оранжевый", 2015, "Южная Корея", "Автомат",
                 "Универсал", "1212 - IH3", 5, false);
 
-        System.out.println(ladaCar);
-        System.out.println(audiCar);
-        System.out.println(bmwCar);
-        System.out.println(kiaCar);
-        System.out.println(hyundaiCar);
-        System.out.println(ladaCar);
+        Bus MAZ1 = new Bus("MAZ", "203", "Belarus", 2015, "Зеленый");
+        Bus MAZ2= new Bus("MAZ", "205", "Belarus", 2016, "Желтый");
+        Bus MAZ3 = new Bus("MAZ", "206", "Belarus", 2017, "Красный");
 
+        System.out.println(MAZ1);
+        System.out.println(MAZ2);
+        System.out.println(MAZ3);
     }
 }

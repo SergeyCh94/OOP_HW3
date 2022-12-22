@@ -8,7 +8,7 @@ public class Transport {
     private String color;
     private int maxSpeed;
 
-    public Transport(String brand, String model, String country, int year) {
+    public Transport(String brand, String model, String country, int year, String color) {
         if (brand == null || brand.isEmpty() || brand.isBlank()){
             this.brand = "default";
         } else {
@@ -31,6 +31,12 @@ public class Transport {
             this.year = 2000;
         } else {
             this.year = year;
+        }
+
+        if (color == null || color.isEmpty() || color.isBlank()){
+            this.color = "default";
+        } else {
+            this.color = color;
         }
     }
 

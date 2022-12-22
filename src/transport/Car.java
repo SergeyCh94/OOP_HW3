@@ -34,7 +34,7 @@ public class Car extends Transport{
     public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission,
                String bodyType, String registrationNumber, int numberOfSeats, boolean summerTiers) {
 
-        super(brand, model, country, year);
+        super(brand, model, country, year, color);
 
         if (numberOfSeats <= 0){
             this.numberOfSeats = 1;
@@ -142,7 +142,11 @@ public class Car extends Transport{
     }
 
     public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
+        if (engineVolume <= 0) {
+            this.engineVolume = 1.5;
+        } else {
+            this.engineVolume = engineVolume;
+        }
     }
 
     public String getColor() {
@@ -158,7 +162,11 @@ public class Car extends Transport{
     }
 
     public void setTransmission(String transmission) {
-        this.transmission = transmission;
+        if (transmission == null || transmission.isEmpty()){
+            this.transmission = "default";
+        } else {
+            this.transmission = transmission;
+        }
     }
 
     public String getBodyType() {
@@ -170,7 +178,11 @@ public class Car extends Transport{
     }
 
     public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
+        if (registrationNumber == null || registrationNumber.isEmpty()){
+            this.registrationNumber = "default";
+        } else {
+            this.registrationNumber = registrationNumber;
+        }
     }
 
     public int getNumberOfSeats() {
