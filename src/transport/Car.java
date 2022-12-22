@@ -5,13 +5,9 @@ import java.time.LocalDate;
 
 import java.util.Objects;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport{
     private double engineVolume;
     private String color;
-    private final int year;
-    private final String country;
     private String transmission;
     private final String bodyType;
     private String registrationNumber;
@@ -38,6 +34,8 @@ public class Car {
     public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission,
                String bodyType, String registrationNumber, int numberOfSeats, boolean summerTiers) {
 
+        super(brand, model, country, year);
+
         if (numberOfSeats <= 0){
             this.numberOfSeats = 1;
         } else {
@@ -62,24 +60,6 @@ public class Car {
             this.transmission = transmission;
         }
 
-        if (brand == null || brand.isEmpty()){
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-
-        if (model == null || model == ""){
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-
-        if (country == null || country == ""){
-            this.country = "default";
-        } else {
-            this.country = country;
-        }
-
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
         } else {
@@ -91,15 +71,7 @@ public class Car {
         } else {
             this.color = color;
         }
-
-        if (year < 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-
         this.summerTiers = summerTiers;
-
     }
 
     public class Key {
@@ -165,15 +137,6 @@ public class Car {
         }
     }
 
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public double getEngineVolume() {
         return engineVolume;
     }
@@ -188,14 +151,6 @@ public class Car {
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public String getTransmission() {
