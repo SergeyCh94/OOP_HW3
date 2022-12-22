@@ -1,6 +1,6 @@
 package transport;
 
-public class Bus extends Transport{
+public class Bus extends Transport {
 
     private String color;
 
@@ -11,23 +11,7 @@ public class Bus extends Transport{
     }
 
     public Bus(String brand, String model, String country, int year, String color) {
-        super(brand, model, country, year);
+        super(brand, model, country, year, color);
 
-
-        if (color == null || color.isBlank() || color.isEmpty()) {
-            this.color = "Белый";
-        } else {
-            this.color = color;
-        }
-    }
-
-    @Override
-    public String getColor() {
-        return color;
-    }
-
-    @Override
-    public void setColor(String color) {
-        this.color = color;
     }
 }
